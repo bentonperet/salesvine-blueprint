@@ -2,41 +2,59 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Salesvine Design System - Mission-Critical Infrastructure Aesthetic */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Core Brand Colors - Dark Mode First */
+    --background: 215 28% 17%;  /* Deep Navy Charcoal */
+    --foreground: 0 0% 98%;     /* Crisp White */
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 215 25% 20%;        /* Slightly lighter card backgrounds */
+    --card-foreground: 0 0% 95%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 215 28% 17%;
+    --popover-foreground: 0 0% 98%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Electric Blue Accent System */
+    --primary: 199 89% 48%;     /* Electric Blue #0EA5E9 */
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 199 89% 65%; /* Lighter blue for glows */
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 215 20% 25%;   /* Muted dark for secondary elements */
+    --secondary-foreground: 0 0% 90%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 215 15% 25%;       /* Even more muted */
+    --muted-foreground: 0 0% 65%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 199 89% 48%;      /* Same as primary for consistency */
+    --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 215 20% 30%;      /* Subtle borders */
+    --input: 215 20% 25%;       /* Input backgrounds */
+    --ring: 199 89% 48%;        /* Focus rings match accent */
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;          /* Slightly more rounded for modern feel */
+
+    /* Mission-Critical Brand Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(var(--background)), hsl(215 25% 20%));
+    --gradient-accent: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
+    --gradient-card: linear-gradient(145deg, hsl(var(--card)), hsl(215 20% 22%));
+    
+    /* Professional Shadows */
+    --shadow-elegant: 0 20px 25px -5px hsl(215 28% 17% / 0.4), 0 10px 10px -5px hsl(215 28% 17% / 0.04);
+    --shadow-glow: 0 0 40px hsl(var(--primary) / 0.3);
+    --shadow-card: 0 10px 15px -3px hsl(215 28% 17% / 0.3), 0 4px 6px -2px hsl(215 28% 17% / 0.05);
+    
+    /* Engineering Precision Grid */
+    --grid-size: 24px;
+    
+    /* Smooth Professional Transitions */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 
     --sidebar-background: 0 0% 98%;
 
@@ -100,6 +118,89 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+  
+  /* Mission-Critical Typography Scale */
+  h1 {
+    @apply text-4xl md:text-6xl font-bold tracking-tight;
+  }
+  
+  h2 {
+    @apply text-3xl md:text-4xl font-semibold tracking-tight;
+  }
+  
+  h3 {
+    @apply text-xl md:text-2xl font-semibold;
+  }
+}
+
+@layer components {
+  /* Hero Section Components */
+  .hero-section {
+    @apply relative min-h-screen flex items-center justify-center overflow-hidden;
+    background: var(--gradient-hero);
+  }
+  
+  .hero-glow {
+    @apply absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 opacity-30 blur-3xl rounded-full;
+    background: var(--gradient-accent);
+  }
+  
+  /* Engineering Grid Background */
+  .engineering-grid {
+    background-image: 
+      radial-gradient(circle at 1px 1px, rgba(199, 210, 254, 0.15) 1px, transparent 0);
+    background-size: var(--grid-size) var(--grid-size);
+  }
+  
+  /* Professional Card Components */
+  .mission-card {
+    @apply relative rounded-xl p-8 border border-border transition-all duration-300;
+    background: var(--gradient-card);
+    box-shadow: var(--shadow-card);
+  }
+  
+  .mission-card:hover {
+    @apply -translate-y-2;
+    box-shadow: var(--shadow-elegant);
+  }
+  
+  /* CTA Button Variants */
+  .cta-primary {
+    @apply relative px-8 py-4 rounded-lg font-semibold text-primary-foreground transition-all duration-300;
+    background: var(--gradient-accent);
+    box-shadow: var(--shadow-glow);
+  }
+  
+  .cta-primary:hover {
+    @apply scale-105;
+    box-shadow: var(--shadow-glow), var(--shadow-elegant);
+  }
+  
+  .cta-secondary {
+    @apply px-8 py-4 rounded-lg font-semibold border-2 border-primary text-primary bg-transparent transition-all duration-300;
+  }
+  
+  .cta-secondary:hover {
+    @apply bg-primary text-primary-foreground scale-105;
+  }
+  
+  /* Section Spacing */
+  .section-padding {
+    @apply py-20 md:py-32;
+  }
+  
+  .container-width {
+    @apply mx-auto max-w-7xl px-4 sm:px-6 lg:px-8;
+  }
+  
+  /* Animated Elements */
+  .slide-up {
+    @apply opacity-0 translate-y-8 transition-all duration-700 ease-out;
+  }
+  
+  .slide-up.visible {
+    @apply opacity-100 translate-y-0;
   }
 }

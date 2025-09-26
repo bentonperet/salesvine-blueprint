@@ -16,10 +16,10 @@
     --popover: 215 28% 17%;
     --popover-foreground: 0 0% 98%;
 
-    /* Electric Blue Accent System */
-    --primary: 199 89% 48%;     /* Electric Blue #0EA5E9 */
+    /* Electric Green Vine System */
+    --primary: 120 100% 50%;     /* Electric Lime Green #00FF00 */
     --primary-foreground: 0 0% 100%;
-    --primary-glow: 199 89% 65%; /* Lighter blue for glows */
+    --primary-glow: 125 85% 65%; /* Lighter green glow */
 
     --secondary: 215 20% 25%;   /* Muted dark for secondary elements */
     --secondary-foreground: 0 0% 90%;
@@ -27,7 +27,7 @@
     --muted: 215 15% 25%;       /* Even more muted */
     --muted-foreground: 0 0% 65%;
 
-    --accent: 199 89% 48%;      /* Same as primary for consistency */
+    --accent: 120 100% 50%;     /* Same as primary for consistency */
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
@@ -35,18 +35,20 @@
 
     --border: 215 20% 30%;      /* Subtle borders */
     --input: 215 20% 25%;       /* Input backgrounds */
-    --ring: 199 89% 48%;        /* Focus rings match accent */
+    --ring: 120 100% 50%;       /* Focus rings match accent */
 
     --radius: 0.75rem;          /* Slightly more rounded for modern feel */
 
-    /* Mission-Critical Brand Gradients */
+    /* Salesvine Growth Gradients */
     --gradient-hero: linear-gradient(135deg, hsl(var(--background)), hsl(215 25% 20%));
     --gradient-accent: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
     --gradient-card: linear-gradient(145deg, hsl(var(--card)), hsl(215 20% 22%));
+    --gradient-vine: linear-gradient(45deg, hsl(120 100% 50%), hsl(125 85% 65%), hsl(130 70% 45%));
     
-    /* Professional Shadows */
+    /* Growth-Focused Shadows */
     --shadow-elegant: 0 20px 25px -5px hsl(215 28% 17% / 0.4), 0 10px 10px -5px hsl(215 28% 17% / 0.04);
-    --shadow-glow: 0 0 40px hsl(var(--primary) / 0.3);
+    --shadow-glow: 0 0 40px hsl(var(--primary) / 0.25);
+    --shadow-vine-glow: 0 0 60px hsl(120 100% 50% / 0.2);
     --shadow-card: 0 10px 15px -3px hsl(215 28% 17% / 0.3), 0 4px 6px -2px hsl(215 28% 17% / 0.05);
     
     /* Engineering Precision Grid */

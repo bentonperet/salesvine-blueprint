@@ -63,10 +63,12 @@ export default {
         'gradient-hero': 'var(--gradient-hero)',
         'gradient-accent': 'var(--gradient-accent)',
         'gradient-card': 'var(--gradient-card)',
+        'gradient-vine': 'var(--gradient-vine)',
       },
       boxShadow: {
         'elegant': 'var(--shadow-elegant)',
         'glow': 'var(--shadow-glow)',
+        'vine-glow': 'var(--shadow-vine-glow)',
         'card': 'var(--shadow-card)',
       },
       borderRadius: {

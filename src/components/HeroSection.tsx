@@ -23,7 +23,7 @@ const HeroSection = () => {
           <h1 className="mb-6 slide-up visible">
             Intelligent Pipeline for{" "}
             <span className="text-primary">Mission-Critical</span>{" "}
-            Innovators
+            Companies
           </h1>
           
           {/* Subheading */}

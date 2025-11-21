@@ -1,9 +1,11 @@
 import Navigation from "@/components/Navigation";
 import HeroSection from "@/components/HeroSection";
-import IntroSection from "@/components/IntroSection";
-import ValuePillars from "@/components/ValuePillars";
-import SnapshotExplainer from "@/components/SnapshotExplainer";
-import ResultsTeaser from "@/components/ResultsTeaser";
+import ChallengeSection from "@/components/ChallengeSection";
+import ApproachSection from "@/components/ApproachSection";
+import ProcessSection from "@/components/ProcessSection";
+import WhoWeServeSection from "@/components/WhoWeServeSection";
+import CTASection from "@/components/CTASection";
+import Footer from "@/components/Footer";
 
 const Index = () => {
   return (
@@ -11,11 +13,13 @@ const Index = () => {
       <Navigation />
       <main>
         <HeroSection />
-        <IntroSection />
-        <ValuePillars />
-        <SnapshotExplainer />
-        <ResultsTeaser />
+        <ChallengeSection />
+        <ApproachSection />
+        <ProcessSection />
+        <WhoWeServeSection />
+        <CTASection />
       </main>
+      <Footer />
     </div>
   );
 };

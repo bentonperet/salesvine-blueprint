@@ -13,12 +13,12 @@ const Navigation = () => {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 border-b border-border bg-background/80 backdrop-blur-sm">
+    <nav className="fixed top-0 left-0 right-0 z-50 border-b border-border bg-background/95 backdrop-blur-md shadow-sm">
       <div className="container-width">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <a href="/" className="text-2xl font-bold text-primary hover:text-primary-glow transition-colors">
+            <a href="/" className="text-2xl font-bold font-serif text-primary hover:text-primary-dark transition-colors">
               Salesvine
             </a>
           </div>
@@ -30,7 +30,7 @@ const Navigation = () => {
                 <a
                   key={item.name}
                   href={item.href}
-                  className="text-foreground hover:text-primary transition-colors px-3 py-2 text-sm font-medium"
+                  className="text-foreground hover:text-primary transition-colors px-3 py-2 text-sm font-medium relative after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:bg-primary after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300"
                 >
                   {item.name}
                 </a>

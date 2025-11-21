@@ -2,13 +2,13 @@ import { Linkedin, Mail } from "lucide-react";
 
 const Footer = () => {
   return (
-    <footer className="bg-card/30 border-t border-border py-12">
+    <footer className="bg-muted/30 border-t border-border py-16">
       <div className="container-width">
         <div className="max-w-4xl mx-auto">
           {/* Company Info */}
           <div className="text-center mb-8">
-            <h3 className="text-2xl font-bold text-primary mb-2">Salesvine</h3>
-            <p className="text-muted-foreground italic">
+            <h3 className="text-3xl font-bold font-serif text-primary mb-2">Salesvine</h3>
+            <p className="text-muted-foreground italic text-lg">
               AI-powered growth for mission-critical infrastructure
             </p>
           </div>

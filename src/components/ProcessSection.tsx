@@ -41,7 +41,7 @@ const ProcessSection = () => {
   ];
 
   return (
-    <section className="section-padding bg-card/30">
+    <section className="section-padding bg-muted/30">
       <div className="container-width">
         <div className="text-center mb-16">
           <h2 className="mb-6">

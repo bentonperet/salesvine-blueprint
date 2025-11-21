@@ -21,7 +21,7 @@ const ChallengeSection = () => {
   ];
 
   return (
-    <section className="section-padding bg-card/30">
+    <section className="section-padding bg-muted/30">
       <div className="container-width">
         <div className="text-center mb-12">
           <h2 className="mb-6">

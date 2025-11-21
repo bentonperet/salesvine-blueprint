@@ -2,105 +2,94 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Salesvine Design System - Mission-Critical Infrastructure Aesthetic */
+/* Salesvine Design System - Professional B2B Infrastructure Aesthetic */
 
 @layer base {
   :root {
-    /* Core Brand Colors - Dark Mode First */
-    --background: 215 28% 17%;  /* Deep Navy Charcoal */
-    --foreground: 0 0% 98%;     /* Crisp White */
+    /* Light, Professional Color Palette */
+    --background: 40 20% 97%;      /* Warm off-white/cream */
+    --foreground: 215 25% 20%;     /* Deep navy for text */
 
-    --card: 215 25% 20%;        /* Slightly lighter card backgrounds */
-    --card-foreground: 0 0% 95%;
+    --card: 0 0% 100%;              /* Pure white cards */
+    --card-foreground: 215 25% 20%;
 
-    --popover: 215 28% 17%;
-    --popover-foreground: 0 0% 98%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 215 25% 20%;
 
-    /* Natural Vine Green System */
-    --primary: 145 65% 45%;     /* Forest/Sage Green #3D9970 */
+    /* Refined Forest Green - Muted & Professional */
+    --primary: 152 38% 38%;         /* Muted forest green #3D8B68 */
     --primary-foreground: 0 0% 100%;
-    --primary-glow: 145 55% 60%; /* Lighter natural green */
+    --primary-light: 152 30% 55%;   /* Lighter sage for accents */
+    --primary-dark: 152 45% 25%;    /* Darker forest for depth */
 
-    --secondary: 215 20% 25%;   /* Muted dark for secondary elements */
-    --secondary-foreground: 0 0% 90%;
+    /* Navy Accent for Trust & Authority */
+    --secondary: 215 40% 30%;       /* Professional navy */
+    --secondary-foreground: 0 0% 100%;
 
-    --muted: 215 15% 25%;       /* Even more muted */
-    --muted-foreground: 0 0% 65%;
+    --muted: 40 15% 90%;            /* Light warm gray */
+    --muted-foreground: 215 15% 45%;
 
-    --accent: 145 65% 45%;      /* Same as primary for consistency */
+    --accent: 152 38% 38%;          /* Match primary */
     --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 0 0% 98%;
+    --destructive: 0 70% 50%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 215 20% 30%;      /* Subtle borders */
-    --input: 215 20% 25%;       /* Input backgrounds */
-    --ring: 145 65% 45%;        /* Focus rings match accent */
+    --border: 40 15% 88%;           /* Subtle warm borders */
+    --input: 0 0% 100%;
+    --ring: 152 38% 38%;
 
-    --radius: 0.75rem;          /* Slightly more rounded for modern feel */
+    --radius: 0.5rem;               /* Clean, modern radius */
 
-    /* Natural Growth Gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(var(--background)), hsl(215 25% 20%));
-    --gradient-accent: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
-    --gradient-card: linear-gradient(145deg, hsl(var(--card)), hsl(215 20% 22%));
-    --gradient-vine: linear-gradient(45deg, hsl(145 65% 45%), hsl(145 55% 60%), hsl(150 50% 40%));
+    /* Professional Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(40 20% 97%), hsl(40 25% 95%));
+    --gradient-accent: linear-gradient(135deg, hsl(152 38% 38%), hsl(152 35% 45%));
+    --gradient-navy: linear-gradient(135deg, hsl(215 40% 30%), hsl(215 35% 40%));
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%), hsl(40 20% 99%));
     
-    /* Natural Growth Shadows */
-    --shadow-elegant: 0 20px 25px -5px hsl(215 28% 17% / 0.4), 0 10px 10px -5px hsl(215 28% 17% / 0.04);
-    --shadow-glow: 0 0 40px hsl(var(--primary) / 0.2);
-    --shadow-vine-glow: 0 0 50px hsl(145 65% 45% / 0.15);
-    --shadow-card: 0 10px 15px -3px hsl(215 28% 17% / 0.3), 0 4px 6px -2px hsl(215 28% 17% / 0.05);
+    /* Sophisticated Shadows */
+    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.08), 0 2px 4px -1px rgb(0 0 0 / 0.04);
+    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.08), 0 4px 6px -2px rgb(0 0 0 / 0.03);
+    --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.08), 0 10px 10px -5px rgb(0 0 0 / 0.02);
+    --shadow-glow: 0 0 40px hsl(152 38% 38% / 0.12);
     
-    /* Engineering Precision Grid */
-    --grid-size: 24px;
+    /* Refined Grid */
+    --grid-size: 32px;
     
-    /* Smooth Professional Transitions */
+    /* Smooth Transitions */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    --transition-bounce: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    --transition-spring: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
 
+    /* Sidebar (for admin/internal use) */
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
     --sidebar-primary: 240 5.9% 10%;
-
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
+    --background: 215 28% 17%;
+    --foreground: 0 0% 98%;
+    --card: 215 25% 20%;
+    --card-foreground: 0 0% 95%;
+    --popover: 215 28% 17%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 145 65% 45%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 215 20% 25%;
+    --secondary-foreground: 0 0% 90%;
+    --muted: 215 15% 25%;
+    --muted-foreground: 0 0% 65%;
+    --accent: 145 65% 45%;
+    --accent-foreground: 0 0% 100%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
+    --border: 215 20% 30%;
     --input: 217.2 32.6% 17.5%;
     --ring: 212.7 26.8% 83.9%;
     --sidebar-background: 240 5.9% 10%;
@@ -120,86 +109,99 @@
   }
 
   body {
-    @apply bg-background text-foreground font-sans antialiased;
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   }
   
-  /* Mission-Critical Typography Scale */
+  /* Professional Typography with Serif Headlines */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+  }
+  
   h1 {
-    @apply text-4xl md:text-6xl font-bold tracking-tight;
+    @apply text-4xl md:text-5xl lg:text-6xl font-bold;
   }
   
   h2 {
-    @apply text-3xl md:text-4xl font-semibold tracking-tight;
+    @apply text-3xl md:text-4xl lg:text-5xl font-bold;
   }
   
   h3 {
-    @apply text-xl md:text-2xl font-semibold;
+    @apply text-2xl md:text-3xl font-semibold;
+  }
+  
+  p {
+    @apply leading-relaxed;
   }
 }
 
 @layer components {
-  /* Hero Section Components */
+  /* Hero Section - Light & Airy */
   .hero-section {
-    @apply relative min-h-screen flex items-center justify-center overflow-hidden;
+    @apply relative min-h-screen flex items-center justify-center overflow-hidden py-24;
     background: var(--gradient-hero);
   }
   
   .hero-glow {
-    @apply absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 opacity-30 blur-3xl rounded-full;
-    background: var(--gradient-accent);
+    @apply absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] opacity-20 blur-3xl rounded-full;
+    background: radial-gradient(circle, hsl(152 38% 38%), transparent 70%);
   }
   
-  /* Engineering Grid Background */
+  /* Subtle Grid Pattern */
   .engineering-grid {
     background-image: 
-      radial-gradient(circle at 1px 1px, rgba(199, 210, 254, 0.15) 1px, transparent 0);
+      radial-gradient(circle at 1px 1px, hsl(152 38% 38% / 0.06) 1px, transparent 0);
     background-size: var(--grid-size) var(--grid-size);
   }
   
-  /* Professional Card Components */
+  /* Clean Card Components */
   .mission-card {
-    @apply relative rounded-xl p-8 border border-border transition-all duration-300;
-    background: var(--gradient-card);
-    box-shadow: var(--shadow-card);
+    @apply relative rounded-2xl p-8 md:p-10 border border-border bg-card transition-all duration-300;
+    box-shadow: var(--shadow-md);
   }
   
   .mission-card:hover {
-    @apply -translate-y-2;
-    box-shadow: var(--shadow-elegant);
+    @apply -translate-y-1;
+    box-shadow: var(--shadow-lg);
   }
   
-  /* CTA Button Variants */
+  /* Refined CTA Buttons */
   .cta-primary {
-    @apply relative px-8 py-4 rounded-lg font-semibold text-primary-foreground transition-all duration-300;
+    @apply relative px-8 py-4 rounded-full font-semibold text-primary-foreground transition-all duration-300;
     background: var(--gradient-accent);
-    box-shadow: var(--shadow-glow);
+    box-shadow: var(--shadow-md);
+    font-family: 'Inter', sans-serif;
   }
   
   .cta-primary:hover {
     @apply scale-105;
-    box-shadow: var(--shadow-glow), var(--shadow-elegant);
+    box-shadow: var(--shadow-glow), var(--shadow-lg);
   }
   
   .cta-secondary {
-    @apply px-8 py-4 rounded-lg font-semibold border-2 border-primary text-primary bg-transparent transition-all duration-300;
+    @apply px-8 py-4 rounded-full font-semibold border-2 border-primary text-primary bg-transparent transition-all duration-300;
+    font-family: 'Inter', sans-serif;
   }
   
   .cta-secondary:hover {
     @apply bg-primary text-primary-foreground scale-105;
   }
   
-  /* Section Spacing */
+  /* Generous Section Spacing */
   .section-padding {
-    @apply py-20 md:py-32;
+    @apply py-24 md:py-32 lg:py-40;
   }
   
   .container-width {
-    @apply mx-auto max-w-7xl px-4 sm:px-6 lg:px-8;
+    @apply mx-auto max-w-7xl px-6 sm:px-8 lg:px-12;
   }
   
-  /* Animated Elements */
+  /* Smooth Animations */
   .slide-up {
-    @apply opacity-0 translate-y-8 transition-all duration-700 ease-out;
+    @apply opacity-0 translate-y-12 transition-all duration-700 ease-out;
   }
   
   .slide-up.visible {

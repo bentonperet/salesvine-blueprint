@@ -8,9 +8,6 @@ const Navigation = () => {
 
   const navItems = [
     { name: "Home", href: "/" },
-    { name: "Services", href: "/services" },
-    { name: "Our Playbook", href: "/playbook" },
-    { name: "Results", href: "/results" },
     { name: "About", href: "/about" },
     { name: "Contact", href: "/contact" },
   ];
@@ -43,8 +40,8 @@ const Navigation = () => {
 
           {/* Desktop CTA */}
           <div className="hidden md:block">
-            <Button className="cta-primary">
-              Get Free Snapshot
+            <Button className="cta-primary" asChild>
+              <a href="/contact">Contact Us</a>
             </Button>
           </div>
 
@@ -76,8 +73,8 @@ const Navigation = () => {
               </a>
             ))}
             <div className="pt-4">
-              <Button className="cta-primary w-full">
-                Get Free Snapshot
+              <Button className="cta-primary w-full" asChild>
+                <a href="/contact">Contact Us</a>
               </Button>
             </div>
           </div>

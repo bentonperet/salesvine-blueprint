@@ -6,7 +6,7 @@ const HeroSection = () => {
     <section className="hero-section engineering-grid">      
       {/* Data Center Background */}
       <div 
-        className="absolute inset-0 opacity-60" 
+        className="absolute inset-0 opacity-75"
         style={{
           backgroundImage: `url(${heroBackground})`,
           backgroundSize: 'cover',

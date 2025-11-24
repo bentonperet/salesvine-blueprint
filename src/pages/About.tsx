@@ -80,8 +80,8 @@ const About = () => {
             <div className="max-w-4xl mx-auto">
               <div className="mission-card">
                 <div className="flex flex-col md:flex-row items-start space-y-6 md:space-y-0 md:space-x-8">
-                  <img 
-                    src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face"
+                  <img
+                    src="/benton-peret.jpg"
                     alt="Benton Peret, Founder"
                     className="w-32 h-32 rounded-full object-cover mx-auto md:mx-0 flex-shrink-0"
                   />

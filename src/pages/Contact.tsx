@@ -45,6 +45,10 @@ const Contact = () => {
               { name: "website", value: formData.website },
               { name: "challenge", value: formData.challenge },
             ],
+            context: {
+              pageUri: window.location.href,
+              pageName: "Contact - Free Snapshot",
+            },
           }),
         }
       );
@@ -59,6 +63,8 @@ const Contact = () => {
           challenge: ""
         });
       } else {
+        const errorData = await response.json();
+        console.error("HubSpot form error:", errorData);
         setSubmitStatus("error");
       }
     } catch (error) {
@@ -70,17 +76,30 @@ const Contact = () => {
   };
 
   useEffect(() => {
-    // Load Cal.com embed script
-    const script = document.createElement("script");
-    script.src = "https://app.cal.com/embed/embed.js";
-    script.async = true;
-    document.body.appendChild(script);
+    // Load Cal.com embed script only if not already loaded
+    if (!document.querySelector('script[src="https://app.cal.com/embed/embed.js"]')) {
+      const script = document.createElement("script");
+      script.src = "https://app.cal.com/embed/embed.js";
+      script.async = true;
+      document.body.appendChild(script);
 
-    script.onload = () => {
-      // @ts-ignore - Cal is loaded from external script
+      script.onload = () => {
+        // @ts-ignore - Cal is loaded from external script
+        if (window.Cal) {
+          // @ts-ignore
+          window.Cal("init", { origin: "https://cal.com" });
+          // @ts-ignore
+          window.Cal("inline", {
+            elementOrSelector: "#cal-inline-embed",
+            calLink: "bentonperet/30min",
+            layout: "month_view"
+          });
+        }
+      };
+    } else {
+      // Script already loaded, initialize Cal
+      // @ts-ignore
       if (window.Cal) {
-        // @ts-ignore
-        window.Cal("init", { origin: "https://cal.com" });
         // @ts-ignore
         window.Cal("inline", {
           elementOrSelector: "#cal-inline-embed",
@@ -88,11 +107,9 @@ const Contact = () => {
           layout: "month_view"
         });
       }
-    };
+    }
 
-    return () => {
-      document.body.removeChild(script);
-    };
+    // Don't remove script on cleanup - let it persist
   }, []);
   return (
     <div className="min-h-screen">

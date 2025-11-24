@@ -4,8 +4,34 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Mail, Calendar, MapPin } from "lucide-react";
+import { useEffect } from "react";
 
 const Contact = () => {
+  useEffect(() => {
+    // Load Cal.com embed script
+    const script = document.createElement("script");
+    script.src = "https://app.cal.com/embed/embed.js";
+    script.async = true;
+    document.body.appendChild(script);
+
+    script.onload = () => {
+      // @ts-ignore - Cal is loaded from external script
+      if (window.Cal) {
+        // @ts-ignore
+        window.Cal("init", { origin: "https://cal.com" });
+        // @ts-ignore
+        window.Cal("inline", {
+          elementOrSelector: "#cal-inline-embed",
+          calLink: "bentonperet/30min",
+          layout: "month_view"
+        });
+      }
+    };
+
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, []);
   return (
     <div className="min-h-screen">
       <Navigation />
@@ -26,15 +52,18 @@ const Contact = () => {
             <div className="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
               
               {/* Option 1: Discovery Call */}
-              <div className="mission-card text-center">
-                <Calendar className="w-16 h-16 text-primary mx-auto mb-6" />
-                <h3 className="mb-4">Book a Discovery Call</h3>
-                <p className="text-muted-foreground mb-6 leading-relaxed">
-                  Schedule a 30-minute conversation to discuss your growth challenges and see if we're a good fit.
-                </p>
-                <Button className="cta-primary w-full">
-                  Schedule Discovery Call
-                </Button>
+              <div className="mission-card">
+                <div className="text-center mb-6">
+                  <Calendar className="w-16 h-16 text-primary mx-auto mb-4" />
+                  <h3 className="mb-2">Book a Discovery Call</h3>
+                  <p className="text-muted-foreground leading-relaxed">
+                    Schedule a 30-minute conversation to discuss your growth challenges and see if we're a good fit.
+                  </p>
+                </div>
+                <div
+                  id="cal-inline-embed"
+                  style={{ width: "100%", height: "600px", overflow: "auto" }}
+                ></div>
               </div>
 
               {/* Option 2: Free Snapshot */}

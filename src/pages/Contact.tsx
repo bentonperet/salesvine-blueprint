@@ -8,8 +8,7 @@ import { useEffect, useState } from "react";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
-    firstname: "",
-    lastname: "",
+    full_name: "",
     email: "",
     company: "",
     website: "",
@@ -30,11 +29,6 @@ const Contact = () => {
     setIsSubmitting(true);
     setSubmitStatus("idle");
 
-    // Split name into firstname/lastname if needed
-    const nameParts = formData.firstname.split(" ");
-    const firstname = nameParts[0] || "";
-    const lastname = nameParts.slice(1).join(" ") || formData.lastname;
-
     try {
       const response = await fetch(
         `https://api.hsforms.com/submissions/v3/integration/submit/50389150/df239203-4dad-4f55-861d-3366913c1861`,
@@ -45,8 +39,7 @@ const Contact = () => {
           },
           body: JSON.stringify({
             fields: [
-              { name: "firstname", value: firstname },
-              { name: "lastname", value: lastname },
+              { name: "full_name", value: formData.full_name },
               { name: "email", value: formData.email },
               { name: "company", value: formData.company },
               { name: "website", value: formData.website },
@@ -59,8 +52,7 @@ const Contact = () => {
       if (response.ok) {
         setSubmitStatus("success");
         setFormData({
-          firstname: "",
-          lastname: "",
+          full_name: "",
           email: "",
           company: "",
           website: "",
@@ -155,12 +147,12 @@ const Contact = () => {
                 ) : (
                   <form className="space-y-4" onSubmit={handleSubmit}>
                     <div>
-                      <Label htmlFor="firstname">Full Name</Label>
+                      <Label htmlFor="full_name">Full Name</Label>
                       <Input
-                        id="firstname"
+                        id="full_name"
                         type="text"
                         placeholder="Your full name"
-                        value={formData.firstname}
+                        value={formData.full_name}
                         onChange={handleInputChange}
                         required
                       />

@@ -6,18 +6,17 @@ const HeroSection = () => {
     <section className="hero-section engineering-grid">      
       {/* Data Center Background */}
       <div 
-        className="absolute inset-0 opacity-30" 
+        className="absolute inset-0 opacity-60" 
         style={{
           backgroundImage: `url(${heroBackground})`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat',
-          mixBlendMode: 'multiply'
+          backgroundRepeat: 'no-repeat'
         }} 
       />
       
       {/* Gradient Overlay for Readability */}
-      <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/85 to-background" />
+      <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/70 to-background" />
       
       {/* Animated Glow Effect */}
       <div className="hero-glow" />

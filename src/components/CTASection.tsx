@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
 const CTASection = () => {
   return (
@@ -17,18 +18,18 @@ const CTASection = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center slide-up visible" style={{ animationDelay: '0.4s' }}>
-            <Button 
+            <Button
               className="cta-primary text-lg px-10 py-6"
               asChild
             >
-              <a href="/contact">Schedule a Call</a>
+              <Link to="/contact">Schedule a Call</Link>
             </Button>
-            <Button 
-              variant="outline" 
+            <Button
+              variant="outline"
               className="bg-transparent text-white border-white/30 hover:bg-white/10 hover:border-white text-lg px-10 py-6 rounded-full"
               asChild
             >
-              <a href="/about">Learn More About Our Approach</a>
+              <Link to="/about">Learn More About Our Approach</Link>
             </Button>
           </div>
         </div>

@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import heroBackground from "@/assets/hero-background.jpg";
+import { Link } from "react-router-dom";
 
 const HeroSection = () => {
   return (
@@ -39,7 +40,7 @@ const HeroSection = () => {
           {/* CTA Button */}
           <div className="flex justify-center slide-up visible" style={{ animationDelay: '0.4s' }}>
             <Button className="cta-primary text-lg px-10 py-6" asChild>
-              <a href="/contact">Contact Us</a>
+              <Link to="/contact">Contact Us</Link>
             </Button>
           </div>
         </div>

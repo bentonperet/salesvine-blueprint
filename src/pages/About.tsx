@@ -1,6 +1,7 @@
 import Navigation from "@/components/Navigation";
 import { Button } from "@/components/ui/button";
 import { Target, Brain, Compass } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const About = () => {
   const principles = [
@@ -140,7 +141,7 @@ const About = () => {
               Let's talk about building a predictable growth system for your business.
             </p>
             <Button className="cta-secondary bg-primary-foreground text-primary border-primary-foreground hover:bg-transparent hover:text-primary-foreground text-lg px-12 py-4" asChild>
-              <a href="/contact">Start the Conversation</a>
+              <Link to="/contact">Start the Conversation</Link>
             </Button>
           </div>
         </section>

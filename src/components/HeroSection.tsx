@@ -4,9 +4,9 @@ import heroBackground from "@/assets/hero-background.jpg";
 const HeroSection = () => {
   return (
     <section className="hero-section engineering-grid">      
-      {/* Subtle Background Texture */}
+      {/* Data Center Background */}
       <div 
-        className="absolute inset-0 opacity-10" 
+        className="absolute inset-0 opacity-30" 
         style={{
           backgroundImage: `url(${heroBackground})`,
           backgroundSize: 'cover',
@@ -16,8 +16,8 @@ const HeroSection = () => {
         }} 
       />
       
-      {/* Subtle Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-background via-background/95 to-background" />
+      {/* Gradient Overlay for Readability */}
+      <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/85 to-background" />
       
       {/* Animated Glow Effect */}
       <div className="hero-glow" />

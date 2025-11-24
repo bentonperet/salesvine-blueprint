@@ -38,7 +38,7 @@ const About = () => {
         </section>
 
         {/* Brand Story */}
-        <section className="pt-12 pb-12 md:pt-16 md:pb-16 lg:pt-20 lg:pb-20">
+        <section className="pt-6 pb-12 md:pt-8 md:pb-16 lg:pt-10 lg:pb-20">
           <div className="container-width">
             <div className="max-w-4xl mx-auto">
               <div className="text-lg text-muted-foreground leading-relaxed space-y-6">

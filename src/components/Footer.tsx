@@ -15,12 +15,12 @@ const Footer = () => {
 
           {/* Contact Links */}
           <div className="flex justify-center space-x-6 mb-8">
-            <a 
-              href="mailto:contact@salesvine.com" 
+            <a
+              href="mailto:contact@salesvine.net"
               className="flex items-center space-x-2 text-muted-foreground hover:text-primary transition-colors"
             >
               <Mail className="w-5 h-5" />
-              <span>contact@salesvine.com</span>
+              <span>contact@salesvine.net</span>
             </a>
             <a 
               href="https://linkedin.com/company/salesvine" 

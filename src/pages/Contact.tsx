@@ -113,7 +113,7 @@ const Contact = () => {
                 <Mail className="w-16 h-16 text-primary mx-auto mb-6" />
                 <h3 className="mb-4 text-center">Get Your Free Snapshot</h3>
                 <p className="text-muted-foreground mb-6 text-center leading-relaxed">
-                  Receive your personalized 14-Point Outreach Snapshot within 48 hours—no sales pitch, just strategy.
+                  Receive your personalized Outreach Snapshot within 48 hours - no sales pitch, just insights on sales position and customer targeting.
                 </p>
                 
                 {submitStatus === "success" ? (

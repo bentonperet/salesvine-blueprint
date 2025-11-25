@@ -76,18 +76,19 @@ const Contact = () => {
   };
 
   useEffect(() => {
-    // Load Cal.com embed script only if not already loaded
-    if (!document.querySelector('script[src="https://app.cal.com/embed/embed.js"]')) {
-      const script = document.createElement("script");
-      script.src = "https://app.cal.com/embed/embed.js";
-      script.async = true;
-      document.body.appendChild(script);
+    // Load Cal.com embed script
+    const script = document.createElement("script");
+    script.src = "https://app.cal.com/embed/embed.js";
+    script.async = true;
 
-      script.onload = () => {
+    script.onload = () => {
+      // Wait a bit for Cal to be available
+      setTimeout(() => {
         // @ts-ignore - Cal is loaded from external script
-        if (window.Cal) {
+        if (typeof window !== 'undefined' && window.Cal) {
           // @ts-ignore
           window.Cal("init", { origin: "https://cal.com" });
+
           // @ts-ignore
           window.Cal("inline", {
             elementOrSelector: "#cal-inline-embed",
@@ -95,21 +96,26 @@ const Contact = () => {
             layout: "month_view"
           });
         }
-      };
-    } else {
-      // Script already loaded, initialize Cal
-      // @ts-ignore
-      if (window.Cal) {
-        // @ts-ignore
-        window.Cal("inline", {
-          elementOrSelector: "#cal-inline-embed",
-          calLink: "bentonperet/30min",
-          layout: "month_view"
-        });
-      }
-    }
+      }, 100);
+    };
 
-    // Don't remove script on cleanup - let it persist
+    // Only add if not already present
+    if (!document.querySelector('script[src="https://app.cal.com/embed/embed.js"]')) {
+      document.body.appendChild(script);
+    } else {
+      // Script exists, try to initialize
+      setTimeout(() => {
+        // @ts-ignore
+        if (typeof window !== 'undefined' && window.Cal) {
+          // @ts-ignore
+          window.Cal("inline", {
+            elementOrSelector: "#cal-inline-embed",
+            calLink: "bentonperet/30min",
+            layout: "month_view"
+          });
+        }
+      }, 100);
+    }
   }, []);
   return (
     <div className="min-h-screen">

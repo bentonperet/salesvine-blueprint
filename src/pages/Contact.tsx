@@ -163,8 +163,8 @@ const Contact = () => {
                       <Label htmlFor="website">Company Website</Label>
                       <Input
                         id="website"
-                        type="url"
-                        placeholder="https://yourcompany.com"
+                        type="text"
+                        placeholder="yourcompany.com"
                         value={formData.website}
                         onChange={handleInputChange}
                       />

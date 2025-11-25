@@ -76,46 +76,19 @@ const Contact = () => {
   };
 
   useEffect(() => {
-    // Load Cal.com embed script
+    // Load Cal.com embed script - using data attributes method
     const script = document.createElement("script");
     script.src = "https://app.cal.com/embed/embed.js";
     script.async = true;
 
-    script.onload = () => {
-      // Wait a bit for Cal to be available
-      setTimeout(() => {
-        // @ts-ignore - Cal is loaded from external script
-        if (typeof window !== 'undefined' && window.Cal) {
-          // @ts-ignore
-          window.Cal("init", { origin: "https://cal.com" });
-
-          // @ts-ignore
-          window.Cal("inline", {
-            elementOrSelector: "#cal-inline-embed",
-            calLink: "bentonperet/30min",
-            layout: "month_view"
-          });
-        }
-      }, 100);
-    };
-
-    // Only add if not already present
     if (!document.querySelector('script[src="https://app.cal.com/embed/embed.js"]')) {
       document.body.appendChild(script);
-    } else {
-      // Script exists, try to initialize
-      setTimeout(() => {
-        // @ts-ignore
-        if (typeof window !== 'undefined' && window.Cal) {
-          // @ts-ignore
-          window.Cal("inline", {
-            elementOrSelector: "#cal-inline-embed",
-            calLink: "bentonperet/30min",
-            layout: "month_view"
-          });
-        }
-      }, 100);
     }
+
+    // Cleanup function
+    return () => {
+      // Script stays in DOM for performance
+    };
   }, []);
   return (
     <div className="min-h-screen">
@@ -146,8 +119,9 @@ const Contact = () => {
                   </p>
                 </div>
                 <div
-                  id="cal-inline-embed"
-                  style={{ width: "100%", height: "600px", overflow: "auto" }}
+                  data-cal-link="bentonperet/30min"
+                  data-cal-config='{"layout":"month_view"}'
+                  style={{ width: "100%", height: "600px", overflow: "scroll" }}
                 ></div>
               </div>
 

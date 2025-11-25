@@ -4,7 +4,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Mail, Calendar, MapPin } from "lucide-react";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -75,21 +75,6 @@ const Contact = () => {
     }
   };
 
-  useEffect(() => {
-    // Load Cal.com embed script - using data attributes method
-    const script = document.createElement("script");
-    script.src = "https://app.cal.com/embed/embed.js";
-    script.async = true;
-
-    if (!document.querySelector('script[src="https://app.cal.com/embed/embed.js"]')) {
-      document.body.appendChild(script);
-    }
-
-    // Cleanup function
-    return () => {
-      // Script stays in DOM for performance
-    };
-  }, []);
   return (
     <div className="min-h-screen">
       <Navigation />
@@ -110,19 +95,17 @@ const Contact = () => {
             <div className="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
               
               {/* Option 1: Discovery Call */}
-              <div className="mission-card">
-                <div className="text-center mb-6">
-                  <Calendar className="w-16 h-16 text-primary mx-auto mb-4" />
-                  <h3 className="mb-2">Book a Discovery Call</h3>
-                  <p className="text-muted-foreground leading-relaxed">
-                    Schedule a 30-minute conversation to discuss your growth challenges and see if we're a good fit.
-                  </p>
-                </div>
-                <div
-                  data-cal-link="bentonperet/30min"
-                  data-cal-config='{"layout":"month_view"}'
-                  style={{ width: "100%", height: "600px", overflow: "scroll" }}
-                ></div>
+              <div className="mission-card text-center">
+                <Calendar className="w-16 h-16 text-primary mx-auto mb-6" />
+                <h3 className="mb-4">Book a Discovery Call</h3>
+                <p className="text-muted-foreground mb-6 leading-relaxed">
+                  Schedule a 30-minute conversation to discuss your growth challenges and see if we're a good fit.
+                </p>
+                <Button className="cta-primary w-full" asChild>
+                  <a href="https://cal.com/bentonperet/30min" target="_blank" rel="noopener noreferrer">
+                    Schedule Your Call
+                  </a>
+                </Button>
               </div>
 
               {/* Option 2: Free Snapshot */}
